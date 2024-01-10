@@ -1,0 +1,68 @@
+:root {
+  --min-max: clamp(1.125rem, 1.0625rem + 0.3125vw, 1.3125rem);
+  --multiplier: clamp(1.125rem, 1.0313rem + 0.4688vw, 1.40625rem);
+  --relative: clamp(1.125rem, 1.0125rem + 0.5625vw, 1.4625rem);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "DM Sans";
+  font-weight: 700;
+  letter-spacing: -0.05em;
+}
+
+.calculators {
+  display: grid;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.calculator input {
+  width: 4rem;
+  height: 2rem;
+  padding: 0 0.25rem;
+}
+
+.fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.suffix-wrapper {
+  display: flex;
+}
+
+.suffix {
+  height: 2rem;
+  padding: 0 0.25rem;
+  background-color: #f2f2f2;
+  line-height: 2rem;
+}
+
+.min-max-calculator .example {
+  font-size: var(--min-max);
+}
+
+.multiplier-calculator .example {
+  font-size: var(--multiplier);
+}
+
+.relative-calculator .example {
+  font-size: var(--relative);
+}
