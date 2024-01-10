@@ -1,0 +1,54 @@
+##############################
+# Build directory
+##############################
+
+www/Archive.zip
+www/archive.zip
+
+www/.htaccess
+www/*.log
+
+##############################
+# General system files
+##############################
+
+**/*.phpintel
+**/*.sass-cache
+**/*.DS_Store
+
+##############################
+# Sublime Text/VSCode
+##############################
+
+**/*.sublime-project
+**/*.sublime-workspace
+**/*.code-workspace
+
+##############################
+# Gulp
+##############################
+
+node_modules
+
+##############################
+# Windows image file caches
+##############################
+
+Thumbs.db
+ehthumbs.db
+
+##############################
+# Folder config file
+##############################
+
+Desktop.ini
+
+##############################
+# Deployment config
+##############################
+
+dandelion.yml
+dandelion_live.yml
+dandelion_dev.yml
+
+www/
