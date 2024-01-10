@@ -27,6 +27,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 input[type="number"] {
+  width: 10rem;
+  padding: 1rem;
+
+  font-size: 2rem;
+
+  border: none;
+
   font-family: 'JetBrains Mono', monospace;
   outline: 2px solid hsl(18,100%,90%);
   outline-offset: -2px;
@@ -60,15 +67,6 @@ label {
   gap: 2rem;
 }
 
-.initial-values input {
-  width: 10rem;
-  padding: 1rem;
-
-  font-size: 2rem;
-
-  border: none;
-}
-
 .initial-values .suffix {
   padding: 0 0.5rem;
   font-size: 1.5rem;
@@ -89,13 +87,9 @@ label {
 }
 
 .calculator {
+  display: grid;
+  gap: 1rem;
   overflow: hidden;
-}
-
-.calculator input {
-  width: 4rem;
-  height: 2rem;
-  padding: 0 0.25rem;
 }
 
 .fields {
@@ -117,9 +111,12 @@ label {
   place-items: center;
 
   height: 100%;
+  padding: 0 0.5rem;
+
   background-color: hsl(18,100%,90%);
 
   font-family: 'JetBrains Mono', monospace;
+  font-size: 1.5rem;
 }
 
 .result {
