@@ -3,5 +3,4 @@ module.exports = {
   server: {
     baseDir: './dist',
   },
-  // You can customize other options as needed
 };
