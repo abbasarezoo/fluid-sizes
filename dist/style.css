@@ -2,6 +2,11 @@
   --min-max: clamp(1.125rem, 1.0625rem + 0.3125vw, 1.3125rem);
   --multiplier: clamp(1.125rem, 1.0313rem + 0.4688vw, 1.40625rem);
   --relative: clamp(1.125rem, 1.0125rem + 0.5625vw, 1.4625rem);
+
+  --spacing-lg: clamp(1.5rem, 1.2500rem + 1.2500vw, 2.2500rem);
+  --spacing-md: clamp(1.3125rem, 1.0938rem + 1.0938vw, 1.9688rem);
+  --spacing-sm: clamp(1.125rem, 0.9375rem + 0.9375vw, 1.6875rem);
+  --spacing-xs: clamp(0.75rem, 0.6250rem + 0.6250vw, 1.1250rem);
 }
 
 * {
@@ -28,7 +33,7 @@ h1, h2, h3, h4, h5, h6 {
 
 input[type="number"] {
   width: 10rem;
-  padding: 1rem;
+  padding: var(--spacing-xs);
 
   font-size: 2rem;
 
@@ -55,20 +60,20 @@ label {
 
 .intro {
   display: grid;
-  gap: 2rem;
+  gap: var(--spacing-md);
 
-  padding: 2rem;
+  padding: var(--spacing-md);
   border-bottom: 1px solid black;
 }
 
 .pg-header {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
+  gap: var(--spacing-md);
 }
 
 .initial-values .suffix {
-  padding: 0 0.5rem;
+  padding: 0 var(--spacing-sm);
   font-size: 1.5rem;
 }
 
@@ -78,28 +83,30 @@ label {
 }
 
 .col {
-  padding: 2rem;
+  display: grid;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
 }
 
 .calculators {
   display: grid;
-  gap: 2rem;
+  gap: var(--spacing-lg);
 }
 
 .calculator {
   display: grid;
-  gap: 1rem;
+  gap: var(--spacing-md);
   overflow: hidden;
 }
 
 .fields {
   display: flex;
-  gap: 1rem;
+  gap: var(--spacing-sm);
 }
 
 .field {
   display: grid;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
 }
 
 .suffix-wrapper {
@@ -111,7 +118,7 @@ label {
   place-items: center;
 
   height: 100%;
-  padding: 0 0.5rem;
+  padding: 0 var(--spacing-xs);
 
   background-color: hsl(18,100%,90%);
 
@@ -120,26 +127,59 @@ label {
 }
 
 .result {
-  padding: 1rem;
+  padding: var(--spacing-xs);
   border-radius: 0.25rem;
   background-color: hsl(18,100%,90%);
 
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1rem
+  font-size: 1rem;
+  letter-spacing: -0.025em;
+}
+
+.calculator-intro {
+  display: grid;
+  gap: var(--spacing-xs);
+}
+
+.examples {
+  display: grid;
+  gap: var(--spacing-sm);
+}
+
+.example {
+  display: grid;
+  gap: var(--spacing-xs);
 }
 
 .examples p {
   white-space: nowrap;
 }
 
-.min-max-calculator .fluid-example {
+.spacing-example {
+  background-color: black;
+  aspect-ratio: 1/1;
+}
+
+.min-max-calculator .type-example {
   font-size: var(--min-max);
 }
 
-.multiplier-calculator .fluid-example {
+.multiplier-calculator .type-example {
   font-size: var(--multiplier);
 }
 
-.relative-calculator .fluid-example {
+.relative-calculator .type-example {
   font-size: var(--relative);
+}
+
+.min-max-calculator .spacing-example {
+  width: var(--min-max);
+}
+
+.multiplier-calculator .spacing-example {
+  width: var(--multiplier);
+}
+
+.relative-calculator .spacing-example {
+  width: var(--relative);
 }

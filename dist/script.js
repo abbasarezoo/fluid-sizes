@@ -14,35 +14,41 @@ remInput.addEventListener('input', function() {
   minMaxCalculation();
   multiplierCalculation();
   relativeCalculation();
+  updateViewportWidth();
 });
 
 minInput.addEventListener('input', function() {
   minMaxCalculation();
   multiplierCalculation();
   relativeCalculation();
+  updateViewportWidth();
 });
 
 maxInput.addEventListener('input', function() {
   minMaxCalculation();
   multiplierCalculation();
   relativeCalculation();
+  updateViewportWidth();
 });
 
 minMaxInputs.forEach(function(input) {
   input.addEventListener('input', function() {
     minMaxCalculation();
+    updateViewportWidth();
   });
 });
 
 multiplierInputs.forEach(function(input) {
   input.addEventListener('input', function() {
     multiplierCalculation();
+    updateViewportWidth();
   });
 });
 
 relativeInputs.forEach(function(input) {
   input.addEventListener('input', function() {
     relativeCalculation();
+    updateViewportWidth();
   });
 });
 
@@ -71,12 +77,12 @@ function minMaxCalculation() {
   const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
   const yAxisIntersection = -minWidth * slope + minFontSize;
 
-  const output = `clamp(${minFontSize}rem, ${yAxisIntersection}rem + ${(slope * 100)}vw, ${maxFontSize}rem)`;
-  const result = `${output};`;
+  const output = `--fluid: clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
+  const result = `${output}`;
 
-  minMaxCalculator.querySelector('.fluid-example').style.setProperty('--min-max', output);
-  minMaxCalculator.querySelector('.min-example').style.fontSize = minFontSize + 'rem';
-  minMaxCalculator.querySelector('.max-example').style.fontSize = maxFontSize + 'rem';
+  minMaxCalculator.querySelector('.type-example').style.setProperty('--min-max', output);
+  // minMaxCalculator.querySelector('.min-example').style.fontSize = minFontSize + 'rem';
+  // minMaxCalculator.querySelector('.max-example').style.fontSize = maxFontSize + 'rem';
   minMaxCalculator.querySelector(".result").textContent = result;
 }
 
@@ -98,12 +104,12 @@ function multiplierCalculation() {
   const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
   const yAxisIntersection = -minWidth * slope + minFontSize;
 
-  const output = `clamp(${minFontSize}rem, ${yAxisIntersection}rem + ${(slope * 100)}vw, ${maxFontSize}rem)`;
-  const result = `${output};`;
+  const output = `--fluid: clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
+  const result = `${output}`;
 
-  multiplierCalculator.querySelector('.fluid-example').style.setProperty('--multiplier', output);
-  multiplierCalculator.querySelector('.min-example').style.fontSize = minFontSize + 'rem';
-  multiplierCalculator.querySelector('.max-example').style.fontSize = maxFontSize + 'rem';
+  multiplierCalculator.querySelector('.type-example').style.setProperty('--multiplier', output);
+  // multiplierCalculator.querySelector('.min-example').style.fontSize = minFontSize + 'rem';
+  // multiplierCalculator.querySelector('.max-example').style.fontSize = maxFontSize + 'rem';
   multiplierCalculator.querySelector(".result").textContent = result;
 }
 
@@ -125,16 +131,30 @@ function relativeCalculation() {
   const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
   const yAxisIntersection = -minWidth * slope + minFontSize;
 
-  const output = `clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem)`;
-  const result = `${output};`;
+  const output = `--fluid: clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
+  const result = `${output}`;
 
-  relativeCalculator.querySelector('.fluid-example').style.setProperty('--relative', output);
-  relativeCalculator.querySelector('.min-example').style.fontSize = minFontSize + 'rem';
-  relativeCalculator.querySelector('.max-example').style.fontSize = maxFontSize + 'rem';
+  relativeCalculator.querySelector('.type-example').style.setProperty('--relative', output);
+  // relativeCalculator.querySelector('.min-example').style.fontSize = minFontSize + 'rem';
+  // relativeCalculator.querySelector('.max-example').style.fontSize = maxFontSize + 'rem';
   relativeCalculator.querySelector(".result").textContent = result;
 }
 
 function updateViewportWidth() {
   const viewportWidth = window.innerWidth;
+  const minMaxCurrentFontSizeEl = minMaxCalculator.querySelector('.type-example');
+  const minMaxCurrentFontSize = window.getComputedStyle(minMaxCurrentFontSizeEl).fontSize;
+  const multiplierCurrentFontSizeEl = multiplierCalculator.querySelector('.type-example');
+  const multiplierCurrentFontSize = window.getComputedStyle(multiplierCurrentFontSizeEl).fontSize;
+  const relativeCurrentFontSizeEl = relativeCalculator.querySelector('.type-example');
+  const relativeCurrentFontSize = window.getComputedStyle(relativeCurrentFontSizeEl).fontSize;
+
+  minMaxCalculator.querySelector(".type-example span").textContent = minMaxCurrentFontSize;
+  minMaxCalculator.querySelector(".spacing-example").style.width = minMaxCurrentFontSize;
+  multiplierCalculator.querySelector(".type-example span").textContent = multiplierCurrentFontSize;
+  multiplierCalculator.querySelector(".spacing-example").style.width = multiplierCurrentFontSize;
+  relativeCalculator.querySelector(".type-example span").textContent = relativeCurrentFontSize;
+  relativeCalculator.querySelector(".spacing-example").style.width = relativeCurrentFontSize;
+
   document.querySelector('.browser-width span').textContent = `${viewportWidth}px`;
 }
