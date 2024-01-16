@@ -73,8 +73,18 @@ label {
 }
 
 .initial-values .suffix {
-  padding: 0 var(--spacing-sm);
+  padding: 0 var(--spacing-xs);
   font-size: 1.5rem;
+}
+
+.initial-values .fields {
+  flex-wrap: wrap;
+}
+
+.viewports {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
 }
 
 .cols {
