@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6, p, ul, ol {
 
 h1, h2, h3, h4, h5, h6 {
   font-weight: 800;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.025em;
 }
 
 input[type="number"] {
@@ -60,15 +60,14 @@ label {
 
 .intro {
   display: grid;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
 
   padding: var(--spacing-md);
   border-bottom: 1px solid black;
 }
 
 .pg-header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   gap: var(--spacing-md);
 }
 
@@ -79,6 +78,17 @@ label {
 
 .initial-values .fields {
   flex-wrap: wrap;
+}
+
+.go-big {
+  font-size: clamp(3.125rem, 1.6667rem + 7.2917vw, 7.5000rem);
+  letter-spacing: -0.075em;
+}
+
+.go-mid {
+  font-size: clamp(1.875rem, 0.9375rem + 4.6875vw, 4.6875rem);
+  letter-spacing: -0.075em;
+  color: hsl(18, 100%, 75%);
 }
 
 .viewports {
@@ -192,4 +202,12 @@ label {
 
 .relative-calculator .spacing-example {
   width: var(--relative);
+}
+
+.pg-footer {
+  padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.pg-footer a {
+  color: inherit;
 }
