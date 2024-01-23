@@ -55,6 +55,11 @@ input[type="number"] {
   font-family: 'JetBrains Mono', monospace;
   outline: 2px solid hsl(18,100%,90%);
   outline-offset: -2px;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+	box-shadow: none;
 }
 
 input[type="number"]:focus {
@@ -237,3 +242,4 @@ h3 {
 .pg-footer a {
   color: inherit;
 }
+
