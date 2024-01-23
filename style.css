@@ -8,6 +8,10 @@
   --spacing-md: clamp(1.3125rem, 1.0938rem + 1.0938vw, 1.9688rem);
   --spacing-sm: clamp(1.125rem, 0.9375rem + 0.9375vw, 1.6875rem);
   --spacing-xs: clamp(0.75rem, 0.6250rem + 0.6250vw, 1.1250rem);
+
+  --font-md: clamp(1.6rem, 1.4667rem + 0.6667vw, 2.0000rem);
+  --font-sm: clamp(1.2rem, 1.1000rem + 0.5000vw, 1.5000rem);
+  --font-xs: clamp(1.05rem, 0.9625rem + 0.4375vw, 1.3125rem);
 }
 
 * {
@@ -18,7 +22,7 @@
 
 body {
   font-family: "DM Sans";
-  font-size: 1.25rem;
+  font-size: var(--font-xs);
   font-weight: 300;
   background-color: hsl(18, 100%, 93%);
 }
@@ -33,6 +37,10 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.05em;
 }
 
+p {
+  line-height: 1.5;
+}
+
 input[type="number"] {
   flex: 1;
 
@@ -43,7 +51,7 @@ input[type="number"] {
   padding: 0 var(--spacing-xs);
   border: none;
 
-  font-size: 2rem;
+  font-size: var(--font-md);
   font-family: 'JetBrains Mono', monospace;
   outline: 2px solid hsl(18,100%,90%);
   outline-offset: -2px;
@@ -84,7 +92,7 @@ h2 {
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: var(--font-xs);
 }
 
 .initial-values {
@@ -140,7 +148,7 @@ h3 {
   background-color: hsl(18,100%,90%);
 
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.5rem;
+  font-size: var(--font-sm);
 }
 
 .result {
@@ -162,57 +170,6 @@ h3 {
   gap: var(--spacing-xs);
 }
 
-.examples {
-  display: grid;
-  gap: var(--spacing-sm);
-}
-
-.example {
-  display: grid;
-  gap: var(--spacing-xs);
-}
-
-.examples p {
-  white-space: nowrap;
-}
-
-.spacing-example {
-  background-color: black;
-  aspect-ratio: 1/1;
-}
-
-.min-max-calculator .type-example {
-  font-size: var(--min-max);
-}
-
-.multiplier-calculator .type-example {
-  font-size: var(--multiplier);
-}
-
-.divider-calculator .type-example {
-  font-size: var(--divider);
-}
-
-.relative-calculator .type-example {
-  font-size: var(--relative);
-}
-
-.min-max-calculator .spacing-example {
-  width: var(--min-max);
-}
-
-.multiplier-calculator .spacing-example {
-  width: var(--multiplier);
-}
-
-.divider-calculator .spacing-example {
-  width: var(--divider);
-}
-
-.relative-calculator .spacing-example {
-  width: var(--relative);
-}
-
 .copy {
   display: flex;
   justify-content: center;
@@ -227,7 +184,7 @@ h3 {
   border: 1px solid hsl(18,100%,45%);
 
   font-family: "DM Sans";
-  font-size: 1.25rem;
+  font-size: var(--font-xs);
   font-weight: 800;
   letter-spacing: -0.05em;
   color: white;
