@@ -87,10 +87,10 @@ function minMaxCalculation() {
   const minFontSize = minFontSizePx / remValue;
   const maxFontSize = maxFontSizePx / remValue;
 
-  const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
-  const yAxisIntersection = -minWidth * slope + minFontSize;
+  const middleValue2 = (maxFontSize - minFontSize) / (maxWidth - minWidth);
+  const middleValue1 = -minWidth * middleValue2 + minFontSize;
 
-  const output = `clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
+  const output = `clamp(${minFontSize}rem, ${middleValue1.toFixed(4)}rem + ${(middleValue2 * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
   const result = `${output} /* ${minFontSizePx}px @ ${minWidthPx}px > ${maxFontSizePx}px @ ${maxWidthPx}px */`;
 
   // minMaxCalculator.querySelector('.type-example').style.setProperty('--min-max', output);
@@ -114,10 +114,10 @@ function multiplierCalculation() {
   const minFontSize = minFontSizePx / remValue;
   const maxFontSize = (minFontSizePx * multiplierValue) / remValue;
 
-  const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
-  const yAxisIntersection = -minWidth * slope + minFontSize;
+  const middleValue2 = (maxFontSize - minFontSize) / (maxWidth - minWidth);
+  const middleValue1 = -minWidth * middleValue2 + minFontSize;
 
-  const output = `clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
+  const output = `clamp(${minFontSize}rem, ${middleValue1.toFixed(4)}rem + ${(middleValue2 * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
   const result = `${output} /* ${minFontSizePx}px @ ${minWidthPx}px > ${maxFontSizePx}px @ ${maxWidthPx}px */`;
   maxFontSizeInput.value = maxFontSizePx;
 
@@ -141,10 +141,10 @@ function dividerCalculation() {
   const maxFontSize = maxFontSizePx / remValue;
   const minFontSize = (maxFontSizePx / dividerValue) / remValue;
 
-  const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
-  const yAxisIntersection = -minWidth * slope + minFontSize;
+  const middleValue2 = (maxFontSize - minFontSize) / (maxWidth - minWidth);
+  const middleValue1 = -minWidth * middleValue2 + minFontSize;
 
-  const output = `clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
+  const output = `clamp(${minFontSize}rem, ${middleValue1.toFixed(4)}rem + ${(middleValue2 * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
   const result = `${output} /* ${minFontSizePx}px @ ${minWidthPx}px > ${maxFontSizePx}px @ ${maxWidthPx}px */`;
   minFontSizeInput.value = minFontSizePx;
 
@@ -170,10 +170,10 @@ function relativeCalculation() {
   const minFontSize = minFontSizePx / remValue;
   const maxFontSize = (minFontSizePx * multiplier) / remValue;
 
-  const slope = (maxFontSize - minFontSize) / (maxWidth - minWidth);
-  const yAxisIntersection = -minWidth * slope + minFontSize;
+  const middleValue2 = (maxFontSize - minFontSize) / (maxWidth - minWidth);
+  const middleValue1 = -minWidth * middleValue2 + minFontSize;
 
-  const output = `clamp(${minFontSize}rem, ${yAxisIntersection.toFixed(4)}rem + ${(slope * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
+  const output = `clamp(${minFontSize}rem, ${middleValue1.toFixed(4)}rem + ${(middleValue2 * 100).toFixed(4)}vw, ${maxFontSize.toFixed(4)}rem);`
   const result = `${output} /* ${minFontSizePx}px @ ${minWidthPx}px > ${maxFontSizePx}px @ ${maxWidthPx}px */` ;
   multiplierInput.value = multiplier;
   maxFontSizeInput.value = maxFontSizePx;
