@@ -71,6 +71,7 @@ input[type="number"]:disabled {
   background: none;
   cursor: not-allowed;
   color: black;
+  outline: 2px solid hsl(18,100%,90%);
 }
 
 label {
