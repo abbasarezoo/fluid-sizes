@@ -50,6 +50,7 @@ input[type="number"] {
   height: 4rem;
   padding: 0 var(--spacing-xs);
   border: none;
+  border-radius: none;
 
   font-size: var(--font-md);
   font-family: 'JetBrains Mono', monospace;
