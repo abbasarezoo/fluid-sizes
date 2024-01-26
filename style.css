@@ -72,6 +72,7 @@ input[type="number"]:disabled {
   cursor: not-allowed;
   color: black;
   outline: 2px solid hsl(18,100%,90%);
+  opacity: 1;
 }
 
 label {
@@ -184,7 +185,7 @@ h3 {
   gap: 0.875rem;
 
   width: 10rem;
-  padding: 0.875rem;
+  padding: 0.875rem 0.5rem;
 
   border-radius: 0.25rem;
   background-color: hsl(18,100%,65%);
